@@ -1,71 +1,71 @@
-# Getting Started with Create React App
+# **📈 Exercise 1: Line Plot for Total Profit (Google Colab Version)**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **🛠 Project Overview**
+This project visualizes **total profit per month** using a **line plot** with `Matplotlib`.  
+The dataset is stored in **company_sales_data.csv**, and the script reads this data using `Pandas`.  
+Users can run this script directly in **Google Colab**, without needing local installations.
 
-## Available Scripts
 
-In the project directory, you can run:
+## **📁 Folder Structure**
+```
+exercise_1/
+│── company_sales_data.csv  # Dataset file
+│── exercise_1.ipynb        # Jupyter Notebook script for Colab
+│── README.md               # Documentation file
+```
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **🚀 Running the Script in Google Colab**
+### **🔹 Steps**
+1. **Open Google Colab:** [Google Colab](https://colab.research.google.com/)
+2. **Upload the dataset (`company_sales_data.csv`)**  
+   - Click the **folder icon** in Colab’s sidebar.  
+   - Click **“Upload”**, then select `company_sales_data.csv`.  
+3. **Run the following code in a Colab cell**:
+   ```python
+   import pandas as pd
+   import matplotlib.pyplot as plt
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   # Load the dataset
+   data = pd.read_csv("company_sales_data.csv")
 
-### `npm test`
+   # Extract total profit and months
+   months = data["month_number"]
+   total_profit = data["total_profit"]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   # Create a line plot for total profit
+   plt.figure(figsize=(10, 5))
+   plt.plot(months, total_profit, marker='o', linestyle='-', color='b', label="Total Profit")
+   plt.xlabel("Month Number")
+   plt.ylabel("Profit ($)")
+   plt.title("Total Profit Per Month")
+   plt.legend()
+   plt.grid(True)
+   plt.show()
+   ```
 
-### `npm run build`
+✔️ **Press Shift + Enter** to execute the cell, and the line plot will be displayed in Colab! 🎉  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## **📜 Code Explanation**
+✅ **Reads data** from CSV using `pandas.read_csv()`.  
+✅ **Plots total profit** per month using `plt.plot()`.  
+✅ **Adds markers, labels, and grid lines** for better visualization.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## **⚠️ Common Errors & Fixes**
+### **1️⃣ `FileNotFoundError: company_sales_data.csv`**
+✅ **Issue:** The dataset is missing or not uploaded.  
+✅ **Fix:** **Upload the CSV** using the **folder icon in Colab** before running the script.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **2️⃣ `ModuleNotFoundError: No module named 'pandas'`**
+✅ **Issue:** Missing required libraries.  
+✅ **Fix:** Install dependencies using:
+   ```python
+   !pip install pandas matplotlib
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## **📜 License**
+This project is open-source under the **MIT License**. Feel free to modify and distribute.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# -about-hook
