@@ -1,4 +1,4 @@
-# **📈 Exercise 1: Line Plot for Total Profit (Google Colab Version)**
+# **📈 Exercise 1: Line Plot for Total Profit **
 
 ## **🛠 Project Overview**
 This project visualizes **total profit per month** using a **line plot** with `Matplotlib`.  
